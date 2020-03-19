@@ -1,0 +1,187 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage {amssymb, amsmath, amsbsy}
+
+\title{Partícula Cargada en un campo Electromagnético}
+\author{Dr. Ricardo Becerril Bárcenas.}
+\date{March 2020}
+
+\begin{document}
+
+\maketitle
+%\section{Partícula cargada en un campo electromagnético}\\%
+Las ecuaciones básicas de la electrodinámica clásica son las ecuaciones de Maxwell, que se muestran a continuación:
+
+\begin{eqnarray}\label{eq1, eq2, eq3, eq4}
+\nabla \times \vec{E} = -\frac{1}{c} \frac{\partial \vec {B}}{\partial t}\\
+\nabla \cdot \vec {E}= 4\pi\rho \\
+\nabla \times \vec {B} = \frac{1}{c}\frac{\partial \vec {E}}{\partial t}+\frac{4\pi}{c} \vec {J}\\
+\nabla \cdot \vec {B}=0
+\end{eqnarray}
+donde c es la velocidad de la luz. \\
+La fuerza de Lorentz conecta el electromagnetismo con la mecánica clásica
+\begin{equation}\label{eq5}
+    m\ddot{\vec x}= \vec F= q[\vec E+\frac{1}{c}(\vec v \times \vec B)]
+\end{equation} donde m,q son la masa y la carga eléctrica respectivamente de una partícula que viaja en una región del espacio donde existen un campo eléctrico $\vec E$ y un campo magnético $\vec B$. En las ecuaciones de Maxwell $\vec J$ y $\rho$ son respectivamente la densidad de corriente y la densidad de carga eléctrica.\\ 
+Usualmente se utilizan por conveniencia, potenciales electromagnéticos en lugar de los campos $\vec E$ y $\vec B$.\\
+De la ecuación (4) $\nabla\cdot\vec B= 0$ se implica la existencia de un campo vectorial  $\vec A(\vec x,t)$ tal que 
+\begin{equation}\label{eq6}
+\vec B=\nabla \times \vec A
+\end{equation}
+
+Que al sustituir en la ecuación (1) se obtiene:
+
+\begin{equation*}
+    \nabla \times \vec E=-\frac{1}{c}\frac{\partial \vec B}{\partial t}= -\frac{1}{c}\frac{\partial(\nabla\times\vec A)}{\partial t}
+\end{equation*}
+o bien 
+\begin{equation*}
+ \nabla \times(\vec E+ \frac{1}{c}\frac{\partial{\vec A}}{\partial t})= \vec 0   
+\end{equation*} como 
+\begin{equation*}
+    \nabla \times (-\nabla \Phi)=\vec 0
+\end{equation*} siempre se da, se tiene que
+\begin{equation*}
+    \vec E +\frac{1}{c}\frac{\partial \vec A}{\partial t}=-\nabla\Phi
+\end{equation*} o bien 
+\begin{equation}
+\vec E= -\frac{1}{c} \frac{\partial \vec A}{\partial t}-\nabla\Phi
+\end{equation}
+
+$\vec A$ y $\Phi$ fungen como potenciales porque con sus derivadas se obtienen los campos $\vec E$ y $\vec B$. Las ecuaciones (1)-(4) pueden escribirse en términos de estos potenciales y se obtienen dos ecuaciones de segundo orden para $\vec A$ y $\Phi$ en lugar de las cuatro ecuaciones de primer orden para $\vec E$ y $\vec B$.
+
+¿Cómo se transforma la fuerza de Lorentz en función de estos potenciales?
+
+¿Puede esta ecuación mecánica de movimiento escribirse en la forma de Euler-Lagrange?
+
+La respuesta a la primera pregunta se da a continuación: en componentes (5) se escribe
+
+\begin{equation}
+    F_{\alpha}=m\dot v ^{\alpha}=q[-(\nabla \Phi)_{\alpha} -\frac{1}{c}\frac{\partial A_{\alpha}}{\partial t} + \frac{1}{c}(\vec v \times (\nabla \times \vec A))_{\alpha}]
+\end{equation}
+fijémonos en el triple producto vectorial
+\begin{equation}
+    [\vec v \times (\nabla \times \vec A)]_{\alpha} = \epsilon_{\alpha \beta \gamma} v^{\beta} (\nabla \times \vec A)_{\gamma} = \epsilon_{\alpha \beta \gamma} v^{\beta} \epsilon_{\gamma \mu \nu} \frac{\partial A_{\nu}}{\partial x^{\mu}}
+\end{equation} 
+donde$(\nabla \Phi)_{\alpha}= \frac{\partial \Phi}{\partial x^{\alpha}} $ y $\epsilon_{\alpha \beta \gamma}$ es el símbolo de permutación en (7) usaremos la identidad $\epsilon_{\alpha\beta\gamma} \epsilon_{\gamma\mu\nu}= \delta_{\alpha\mu}\delta_{\beta\nu}-\delta_{\alpha\nu}\delta_{\beta\mu}$ con la delta de Kronecher; de modo que (7) se reescribe como
+\begin{equation}
+    [\vec v\times (\nabla\times\vec A) ]_{\alpha}=(\delta_{\alpha\mu}\delta_{\beta\nu}-\delta_{\alpha\nu}\delta_{\beta\mu})v^{\beta} \frac{\partial A_{\nu}}{\partial x^{\mu}}= v^{\nu} \frac{\partial A_{\nu}}{\partial x^{\alpha}}-v^{\mu} \frac{\partial A_{\alpha}}{\partial x^{\mu}}
+\end{equation}
+
+Regresando a (8), con la expresión (10) tenemos:
+
+\begin{equation*}
+	m\dot v^{\alpha}=q\left[-\frac{\partial \Phi}{\partial x^{\alpha}} -\frac{1}{c}\frac{\partial A_{\alpha}}{\partial t} + \frac{v^{\mu}}{c}\left(\frac{\partial A_{\mu}}{\partial x^{\alpha}} - \frac{\partial A_{\alpha}}{\partial x^{\mu}}\right) \right ]
+\end{equation*}
+\begin{equation}
+= q \left[-\frac{1}{c}\frac{\mathrm{d} A_{\alpha}}{\mathrm{d} t} + \frac{\partial}{\partial x^{\alpha}}\left(\frac{1}{c}v^{\mu}A_{\mu} - \Phi \right )\right]
+\end{equation}
+
+donde usamos que
+
+\begin{equation*}
+	\frac{\mathrm{d} A_{\alpha}(\vec{x}, t)}{\mathrm{d} t} = \frac{\partial A_{\alpha}}{\partial x^{\mu}}\frac{\mathrm{d} x^{\mu}}{\mathrm{d} t} + \frac{\partial A_{\alpha}}{\partial t}.
+\end{equation*}
+
+Reagrupamos (11) como sigue (q, m constantes):
+
+\begin{equation}
+	\frac{\mathrm{d} }{\mathrm{d} t}\left [ mv^{\alpha} + \frac{q}{c}A_{\alpha} \right ] + \frac{\partial }{\partial x^{\alpha}}\left [ q\Phi - \frac{q}{c}v^{\mu}A_{\mu} \right ] = 0
+\end{equation}
+
+Esta ecuación tiene la estructura de Euler - Lagrange
+\begin{equation*}
+    \frac{\mathrm{d} }{\mathrm{d} t} \left ( \frac{\partial \mathfrak{L}}{\partial v^{\alpha}} \right ) - \frac{\partial \mathfrak{L}}{\partial x^{\alpha}} = 0
+\end{equation*}
+
+La pregunta es: ¿Con cuál función Lagrangiana (12) adquiere la estructura de las ecuaciones de Euler - Lagrange?
+
+Notemos que ni $\Phi$ ni $A_{\alpha}$ dependen de $v^{\mu}$. Resulta que:
+
+\begin{equation*}
+    \mathfrak{L} = \frac{1}{2} m \dot x^{\alpha}\cdot\dot x^{\alpha} - q\Phi(\vec{x},t) + q\frac{\dot x^{\alpha}}{c}(\vec{x},t)
+\end{equation*} 
+
+\begin{equation}
+	\mathfrak{L} = \frac{1}{2}m\vec{v}\cdot\vec{v} - q\Phi(\vec{x},t) + \frac{q}{c}\vec{v}\cdot \vec{A}(\vec{x},t)
+\end{equation} 
+
+Con esta Lagrangiana, las ecuaciones E-L, reproducen la fuerza de Lorentz (12), en efecto  
+\begin{equation*}
+    \frac{\partial \mathfrak{L}}{\partial v^{\alpha}} = mv^{\alpha} + \frac{q}{c}A_{\alpha}
+\end{equation*}
+
+Al derivar respecto del tiempo
+\begin{equation*}
+    \frac{\mathrm{d} }{\mathrm{d} t} \left[ \frac{\partial \mathfrak{L}}{\partial v^{\alpha}} \right] = \frac{\mathrm{d} }{\mathrm{d} t} \left( mv^{\alpha} + \frac{q}{c}A_{\alpha}\right)
+\end{equation*}
+
+\begin{equation*}
+   -\frac{\partial \mathfrak{L}}{\partial x^{\alpha}} = \frac{\partial }{\partial x^{\alpha}} \left [ q\Phi - \frac{q}{c}v^{\mu}A_{\mu} \right ]  
+\end{equation*}
+
+que es la ecuación (12).
+
+¿Cuál es la expresión de la energía?
+
+\begin{equation*}
+\mathfrak{E} = \dot{q}^{\alpha} \frac{\partial \mathfrak{L}}{\partial \dot q^{\alpha}} - \mathfrak{L} = v^{\alpha}\frac{\partial \mathfrak{L}}{\partial v^{\alpha}} - \mathfrak{L} = v^{\alpha}\left ( mv^{\alpha}  + \frac{q}{c}A_{\alpha} \right ) - \frac{1}{2}mv^{\alpha}v^{\alpha} + q\Phi - \frac{q}{c}v^{\alpha}A_{\alpha}
+\end{equation*}
+
+\begin{equation}
+\mathfrak{E} = \frac{1}{2}m\vec{v}\cdot\vec{v} + q\Phi
+\end{equation}
+
+Cómo habíamos visto, la energía se conserva cuando $\frac{\partial \mathfrak{L}}{\partial t} = 0$, en este caso (14) es una constante sólo si $\Phi$ y $\vec{A}$ no dependen del tiempo.
+
+Nótese que $\vec{A}$ no está en la expresión de la energía pues la fuerza magnética $q\vec{v}\times\vec{B}$ no realiza trabajo  sobre la partícula porque esta fuerza es perpendicular a la velocidad:
+
+\begin{equation*}
+W_{B} = \int_{\vec{r_{1}}}^{\vec{r_{2}}} \vec{F_{B}}\cdot\mathrm{d}\vec{r} = \int_{t_{1}}^{t_{2}} q\left ( \vec{v}\times\vec{B}\right )\cdot \frac{\mathrm{d} \vec{r}}{\mathrm{d} t}\mathrm{d}t = \int_{t_{1}}^{t_{2}} q\left ( \vec{v}\times\vec{B}\right )\cdot \vec{v}  \mathrm{d}t = 0
+\end{equation*}
+
+$\mathfrak{L}$ puede escribirse como $\mathfrak{L} = K - U$ con $U = q\Phi - q\vec{v}\cdot\vec{A}$, siendo la energía de interacción. Aquí sí entra $\vec{A}(\vec{x},t)$, sim embargo, la cantidad conservada no es $K + U$ pues $U$ depende de la velocidad.
+
+\section*{Transformación de Norma y Lagrangianos equivalentes}
+  
+A partir de los potenciales $\Phi$ y $\vec{A}$ uno obtiene los campos eléctrico y magnético como:
+
+\begin{equation*}
+\vec{E} = -\nabla \phi - \frac{1}{c} \frac{\partial \vec{A}}{\partial t}
+\end{equation*}
+
+\begin{equation*}
+\vec{B} = \nabla \times \vec{A}
+\end{equation*}
+
+La transformación:
+
+\begin{equation}
+\vec{A}^{'} = \vec{A} + \nabla \Omega (\vec{x},t)
+\vec{\Phi}^{'} = \Phi - \frac{1}{c} \frac{\partial }{\partial t} \Omega(\vec{x},t)
+\end{equation}
+
+deja invariante a los campos $\vec{E}$ y $\vec{B}$, en efecto: 
+
+\begin{equation*}
+\vec{E}^{'} = -\nabla \Phi^{'} - \frac{1}{c} \frac{\partial \vec{A}^{'}}{\partial t} = - \nabla \left ( \Phi - \frac{1}{c} \frac{\partial }{\partial t} \Omega \right ) - \frac{1}{c} \frac{\partial }{\partial t} \left (  \vec{A} + \nabla \Omega \right ) = -\nabla\Phi - \frac{1}{c} \frac{\partial \vec{A}}{\partial t} = \vec{E}
+\end{equation*}
+
+\begin{equation*}
+\vec{B}^{'} = \nabla \times \vec{A}^{'} = \nabla \times \left ( \vec{A} + \nabla \Omega \right ) = \nabla \times \vec{A} = \vec{B}.
+\end{equation*}
+
+Como vimos, la fuerza de Lorentz $\vec{F} = m\dot \vec{v} = q\left [ \vec{E} + \frac{1}{c} \left ( \vec{v} \times \vec{B} \right ) \right ]$ depende de $\vec{E}$ y $\vec{B}$ que son invariantes ante transformaciones de norma, así que, $\vec{F}$ es invariante ante estas transformaciones. Por otra parte, la fuerza de Lorentz se escribió con la estructura Lagrangiana con una función $\mathfrak{L}$ que depende de $\vec{A}$ y $\Phi$, que si cambian, $\vec{A} \rightarrow \vec{A}^{'}$, $\Phi \rightarrow \Phi^{'}$, ¿Cómo se reflejan estas transformaciones en la función de Lagrange?
+
+Hagamos la transformación (15) en la función de Lagrange (13):
+\begin{equation*}
+\mathfrak{L}^{'}= \frac{1}{2} m\vec{v}\cdot\vec{v} - q\Phi^{'} + \frac{q}{c}
+\vec{v}\cdot\vec{A}^{'} = \frac{1}{2} m\vec{v}\cdot\vec{v} -q \left ( \Phi - \frac{1}{c} \frac{\partial \Omega}{\partial t} \right ) + \frac{q}{c} \vec{v} \cdot \left ( \vec{A} + \nabla\Omega \right ) 
+\end{equation*}
+\begin{equation*}
+= \frac{1}{2}  m\vec{v}\cdot\vec{v} - q\Phi + \frac{q}{c} \vec{v}\cdot\vec{A} + \frac{q}{c} \left ( \vec{v} \cdot \nabla\Omega + \frac{\partial \omega}{\partial t} \right ) = \mathfrak{L} + \frac{q}{c} \frac{\partial \Omega}{\partial t}
+\end{equation*}
+
+$\mathfrak{L}$ y $\mathfrak{L}^{'}$ son Lagrangianos equivalentes proporcionando la misma dinámica (las mismas ecuaciones de movimiento).
+
+\end{document}
